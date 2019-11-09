@@ -17,8 +17,8 @@ import kotlin.math.max
  **/
 class ImageDetailFrameLayout(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
 
-    val MAX_MOVE_EXIT_LENGTH = getScreenHeight(context) / 4
-    val MIN_SCALE = 0.4f
+    var maxMoveExitLength = getScreenHeight(context) / 4
+    var MIN_SCALE = 0.4f
 
     private val orgPosition = PointF()
     private val currentPosition = PointF()
