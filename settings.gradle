@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':image_trans_lib'
 rootProject.name='BigImageTrans'

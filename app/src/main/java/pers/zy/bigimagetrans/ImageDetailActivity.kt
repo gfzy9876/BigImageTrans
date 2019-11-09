@@ -17,7 +17,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.github.chrisbanes.photoview.PhotoView
 import kotlinx.android.synthetic.main.activity_image_detail.*
-import pers.zy.bigimagetrans.translib.ImageDetailFrameLayout
+import pers.zy.image_trans_lib.ImageDetailFrameLayout
 
 open class ImageDetailActivity : AppCompatActivity() {
 

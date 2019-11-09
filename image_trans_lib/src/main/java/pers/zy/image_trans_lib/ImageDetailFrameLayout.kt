@@ -1,4 +1,4 @@
-package pers.zy.bigimagetrans.translib
+package pers.zy.image_trans_lib
 
 import android.content.Context
 import android.graphics.PointF
@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.ViewConfiguration
 import android.widget.FrameLayout
-import pers.zy.bigimagetrans.getScreenHeight
 import kotlin.math.abs
 import kotlin.math.max
 
@@ -49,12 +48,12 @@ class ImageDetailFrameLayout(context: Context, attrs: AttributeSet? = null) : Fr
                 if (isIntercept) {
                     x = currentPosition.x - orgPosition.x + topPosition.x
                     y = currentPosition.y - orgPosition.y + topPosition.y
-                    val offset = 1 - if (currentPosition.y - orgPosition.y <= 0) {
+                    val offset = if (currentPosition.y - orgPosition.y <= 0) {
                         0f
                     } else {
                         (currentPosition.y - orgPosition.y) * 1f / maxMoveExitLength
                     }
-                    val fraction = minOf(1f, max(minScale, offset))
+                    val fraction = minOf(1f, max(minScale, 1 - offset))
                     moveExitListener?.onMove(fraction)
                     scaleX = fraction
                     scaleY = fraction

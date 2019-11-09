@@ -1,5 +1,5 @@
 @file: JvmName("Commons")
-package pers.zy.bigimagetrans
+package pers.zy.image_trans_lib
 
 import android.content.Context
 
