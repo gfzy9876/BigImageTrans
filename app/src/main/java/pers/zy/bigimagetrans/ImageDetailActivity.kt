@@ -24,6 +24,7 @@ open class ImageDetailActivity : AppCompatActivity() {
     companion object {
         const val ARG_IMG_RES_IDS = "arg_img_res_ids"
         const val ARG_POSITION = "arg_position"
+        const val EXTRA_SHARED_TRANS_NAME = "extra_shared_trans_name"
 
         fun start(context: Activity, view: View, resId: List<String>, position: Int) {
             context.startActivity(
@@ -113,7 +114,7 @@ open class ImageDetailActivity : AppCompatActivity() {
 
         override fun instantiateItem(container: ViewGroup, position: Int): Any {
             val imageView = PhotoView(this@ImageDetailActivity).apply {
-                ViewCompat.setTransitionName(this, "share$position")
+                ViewCompat.setTransitionName(this, "$EXTRA_SHARED_TRANS_NAME$position")
                 if (position == this@ImageDetailActivity.position) {
                     viewTreeObserver.addOnGlobalLayoutListener(object :
                         ViewTreeObserver.OnGlobalLayoutListener {
