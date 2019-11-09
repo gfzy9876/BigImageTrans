@@ -52,3 +52,7 @@ DetailImageViewPager里面就是放的就是一张张图片。
 fl_image_detail.maxMoveExitLength = 400//设置拖动退出长度为400px
 fl_image_detail.minScale = 0.5f//设置最小缩放值为0.5f
 ```
+
+### 预览如下：
+
+![image](https://github.com/gfzy9876/BigImageTrans/)
