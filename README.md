@@ -55,6 +55,6 @@ fl_image_detail.minScale = 0.5f//设置最小缩放值为0.5f
 
 ### 预览如下：
 
-![img](https://github.com/gfzy9876/BigImageTrans/blob/master/preview/preview.png)
+![img](https://github.com/gfzy9876/BigImageTrans/blob/master/preview/preview1.png)
 
 ![img](https://github.com/gfzy9876/BigImageTrans/blob/master/preview/preview2.png)
