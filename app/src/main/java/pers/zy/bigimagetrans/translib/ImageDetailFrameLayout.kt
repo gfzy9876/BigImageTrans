@@ -18,7 +18,7 @@ import kotlin.math.max
 class ImageDetailFrameLayout(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
 
     var maxMoveExitLength = getScreenHeight(context) / 4
-    var MIN_SCALE = 0.4f
+    var minScale = 0.4f
 
     private val orgPosition = PointF()
     private val currentPosition = PointF()
@@ -49,15 +49,15 @@ class ImageDetailFrameLayout(context: Context, attrs: AttributeSet? = null) : Fr
                 if (isIntercept) {
                     x = currentPosition.x - orgPosition.x + topPosition.x
                     y = currentPosition.y - orgPosition.y + topPosition.y
-                    val fraction = 1 - if (currentPosition.y - orgPosition.y <= 0) {
+                    val offset = 1 - if (currentPosition.y - orgPosition.y <= 0) {
                         0f
                     } else {
-                        (currentPosition.y - orgPosition.y) * 1f / MAX_MOVE_EXIT_LENGTH
+                        (currentPosition.y - orgPosition.y) * 1f / maxMoveExitLength
                     }
-                    val scale = minOf(1f, max(MIN_SCALE, fraction))
-                    moveExitListener?.onMove(scale)
-                    scaleX = scale
-                    scaleY = scale
+                    val fraction = minOf(1f, max(minScale, offset))
+                    moveExitListener?.onMove(fraction)
+                    scaleX = fraction
+                    scaleY = fraction
                 }
             }
         }
@@ -96,7 +96,7 @@ class ImageDetailFrameLayout(context: Context, attrs: AttributeSet? = null) : Fr
         when (event.actionMasked) {
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 isIntercept = false
-                val exit = abs(currentPosition.y - orgPosition.y) >= MAX_MOVE_EXIT_LENGTH
+                val exit = abs(currentPosition.y - orgPosition.y) >= maxMoveExitLength
                 if (exit) {
                     moveExitListener?.onExit()
                 } else {
