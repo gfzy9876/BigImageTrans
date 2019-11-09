@@ -74,6 +74,8 @@ open class ImageDetailActivity : AppCompatActivity() {
                 checkFinish()
             }
         })
+        fl_image_detail.maxMoveExitLength = 400
+        fl_image_detail.minScale = 0.5f
     }
 
     override fun onBackPressed() {
