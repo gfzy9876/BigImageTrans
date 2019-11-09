@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImageDetailActivity"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/bg_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff000000" />
+
+    <pers.zy.bigimagetrans.translib.ImageDetailFrameLayout
+        android:id="@+id/fl_image_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <pers.zy.bigimagetrans.view.DetailImageViewPager
+            android:id="@+id/vp_image_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </pers.zy.bigimagetrans.translib.ImageDetailFrameLayout>
+
+</FrameLayout>
