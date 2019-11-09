@@ -58,11 +58,11 @@ class MainActivity : AppCompatActivity() {
                     val newPosition = mTranState!!.getInt("position", 0)
                     names?.let {
                         it.clear()
-                        it.add("share$newPosition")
+                        it.add("${ImageDetailActivity.EXTRA_SHARED_TRANS_NAME}$newPosition")
                     }
                     sharedElements?.let {
                         it.clear()
-                        it["share$newPosition"] = layoutManager.getChildAt(newPosition)!!.findViewById(R.id.iv_main)
+                        it["${ImageDetailActivity.EXTRA_SHARED_TRANS_NAME}$newPosition"] = layoutManager.getChildAt(newPosition)!!.findViewById(R.id.iv_main)
                     }
                     mTranState = null
                 }
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 })
 
-            ViewCompat.setTransitionName(holder.mIvMain, "share$position")
+            ViewCompat.setTransitionName(holder.mIvMain, "${ImageDetailActivity.EXTRA_SHARED_TRANS_NAME}$position")
         }
 
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
