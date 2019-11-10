@@ -9,6 +9,29 @@ DetailImageViewPager里面就是放的就是一张张图片。
 
 本人的实现是通过外部拦截，直接对ViewPager做移动操作。
 
+```
+Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+```
+
+```
+allprojects {
+	repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+
+```
+
+Then, add the library to your module `build.gradle`
+
+[![](https://jitpack.io/v/gfzy9876/BigImageTrans.svg)](https://jitpack.io/#gfzy9876/BigImageTrans)
+
+```
+dependencies {
+    implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
+}
+```
+
 * 包裹ImageDetailFrameLayout
 
 ```xml
