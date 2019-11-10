@@ -9,9 +9,7 @@ DetailImageViewPager里面就是放的就是一张张图片。
 
 本人的实现是通过外部拦截，直接对ViewPager做移动操作。
 
-```
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
-```
 
 ```
 allprojects {
@@ -28,7 +26,7 @@ Then, add the library to your module `build.gradle`
 
 ```
 dependencies {
-    implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
+    implementation 'com.github.gfzy9876:BigImageTrans:latest.release.here'
 }
 ```
 
